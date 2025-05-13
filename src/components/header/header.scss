@@ -1,0 +1,48 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 100px;
+
+  &-logo {
+    height: 68px;
+  }
+
+  &-nav {
+    display: flex;
+    gap: 57px;
+
+    a {
+      color: #000000;
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: 500;
+      position: relative;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &.active {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px;
+
+    &-logo {
+      height: 47px;
+    }
+
+    &-nav {
+      gap: 20px;
+
+      a {
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

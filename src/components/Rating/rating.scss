@@ -1,0 +1,16 @@
+.rating {
+  display: flex;
+  gap: 5px;
+}
+
+.star {
+  font-size: 20px;
+}
+
+.filled {
+  color: #ff6060; // rouge (étoile active)
+}
+
+.empty {
+  color: #e3e3e3; // gris (étoile inactive)
+}

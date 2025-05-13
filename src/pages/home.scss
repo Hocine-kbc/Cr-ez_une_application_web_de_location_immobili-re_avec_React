@@ -1,0 +1,26 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 340px);
+  justify-content: center;
+  gap: 50px 60px;
+  padding: 56px 50px;
+  background: #F6F6F6;
+  border-radius: 25px;
+  margin: 43px auto;
+  max-width: 1240px; // Largeur max comme sur maquette
+
+  // Version tablette
+  @media (max-width: 1240px) {
+    grid-template-columns: repeat(2, 340px);
+    padding: 40px;
+  }
+
+  // Version mobile
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    background: none;
+    padding: 20px;
+    gap: 20px;
+    margin: 20px auto;
+  }
+}

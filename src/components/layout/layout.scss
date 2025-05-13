@@ -1,0 +1,139 @@
+// src/scss/_layout.scss
+
+.header {
+  background-color: white;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.banner {
+  // Styles de base
+   position: relative;
+  height: 223px;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  border-radius: 25px;
+  overflow: hidden;
+  display: flex; // Ajouté pour le centrage
+  align-items: center; // Centre verticalement
+  justify-content: center; // Centre horizontalement
+  // Image de fond
+  background-image: url('../../public/images/banner-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  // Overlay sombre
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: inherit;
+  }
+
+  // Titre
+  &__title {
+    position: relative;
+    color: white;
+    font-size: 48px;
+    font-weight: 500;
+    text-align: center;
+    padding: 0 20px;
+    z-index: 1;
+    font-weight: 700;
+   
+    
+
+  }
+  // Ajustements responsive
+  @media (max-width: 1240px) {
+    border-radius: 10px;
+    margin: 0 20px; // Marge réduite sur petits écrans
+    width: calc(100% - 40px); // Compensation des marges
+  }
+
+  // Version mobile
+  @media (max-width: 768px) {
+    height: 111px;
+    border-radius: 10px;
+    justify-content: center;
+    padding-left: 20px;
+
+    &__title {
+      font-size: 24px;
+      text-align: left;
+    }
+  }
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.footer {
+  background-color: #000;
+  color: white;
+  width: 100%;
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 66px 0 29px;
+  margin-top: 50px;
+  
+  &-logo {
+    height: 40px;
+    margin-bottom: 28px;
+    filter: brightness(0) invert(1);
+  }
+
+  &-text {
+    margin: 0;
+    font-size: 24px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 62px 0;
+    margin-top: 30px;
+
+    &-text {
+      font-size: 12px;
+    }
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 340px);
+  justify-content: center;
+  gap: 50px 60px;
+  padding: 56px 50px;
+  background: #F6F6F6;
+  border-radius: 25px;
+  margin: 43px auto;
+  max-width: 1240px; // Largeur max comme sur maquette
+
+  // Version tablette
+  @media (max-width: 1240px) {
+    grid-template-columns: repeat(2, 340px);
+    padding: 40px;
+  }
+
+  // Version mobile
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    background: none;
+    padding: 20px;
+    gap: 20px;
+    margin: 20px auto;
+  }
+}
