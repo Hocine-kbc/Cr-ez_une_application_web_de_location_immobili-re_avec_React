@@ -1,5 +1,5 @@
 import { FaStar } from "react-icons/fa";
-import "../assets/styles/rating.scss"; // tu peux personnaliser ce fichier
+import "../Rating/rating.scss"; // tu peux personnaliser ce fichier
 
 const Rating = ({ rating }) => {
   const totalStars = 5;

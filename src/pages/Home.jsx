@@ -8,9 +8,10 @@ import Footer from '../components/footer/Footer';
 import './home.scss'; // ✅ Import du fichier SCSS du même dossier
 
 const Home = () => {
+  
   return (
     <div className="home">
-      <Header />
+      
       
       <main>
       <Banner 
@@ -29,7 +30,7 @@ const Home = () => {
         </div>
       </main>
 
-      <Footer />
+     
     </div>
   );
 };

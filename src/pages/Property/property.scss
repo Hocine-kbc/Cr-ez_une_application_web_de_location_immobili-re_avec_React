@@ -1,32 +1,36 @@
-.logement-page {
-  max-width: 1240px;
+// property.scss
+
+.property-page {
+  width: 100%;
+  //max-width: 1240px;
   margin: 0 auto;
   padding: 0 100px;
   color: #ff6060;
 
-  .logement-header {
+  .property-header {
     display: flex;
     justify-content: space-between;
     margin: 30px 0 24px;
 
     .left-column {
-      .logement-title {
+      .property-title {
         font-size: 36px;
         font-weight: 500;
         margin: 0;
         line-height: 1.2;
       }
 
-      .logement-location {
+      .property-location {
         font-size: 18px;
         margin: 8px 0 16px;
-        color: black;
+        color: #ff6060; // Couleur corrigée
       }
 
       .tags-container {
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
+        margin-top: 20px;
       }
     }
 
@@ -46,6 +50,8 @@
           font-size: 18px;
           margin: 0;
           white-space: pre-line;
+          color: #ff6060;
+          font-weight: 500;
         }
 
         .host-picture {
@@ -58,7 +64,8 @@
 
       .rating-container {
         display: flex;
-        gap: 5px;
+        gap: 10px;
+        margin-top: 10px;
       }
     }
   }
@@ -76,30 +83,64 @@
   .description-text {
     margin: 0;
     line-height: 1.6;
+    color: #000000;
   }
 
   .equipments-list {
     margin: 0;
     padding-left: 0;
     list-style: none;
+    color: #000000;
 
     li {
       margin-bottom: 5px;
+      &:before {
+        content: "•";
+        margin-right: 8px;
+      }
     }
+  }
+
+  // Footer (ajoutez-le dans votre JSX)
+  .property-footer {
+    text-align: center;
+    padding: 50px 0;
+    margin-top: 50px;
+    color: #ff6060;
+    font-size: 14px;
+    border-top: 1px solid #eaeaea;
   }
 
   @media (max-width: 768px) {
     padding: 0 20px;
 
-    .logement-header {
+    .property-header {
       flex-direction: column;
       gap: 16px;
+
+      .left-column {
+        .property-title {
+          font-size: 24px;
+        }
+        
+        .property-location {
+          font-size: 16px;
+        }
+      }
 
       .right-column {
         flex-direction: row-reverse;
         justify-content: space-between;
         align-items: center;
-        width: 100%;
+        margin-top: 15px;
+
+        .host-info {
+          order: 2;
+        }
+
+        .rating-container {
+          order: 1;
+        }
       }
     }
 
@@ -108,5 +149,4 @@
       gap: 20px;
     }
   }
-  
 }
