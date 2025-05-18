@@ -1,15 +1,12 @@
 import React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import logements from '../../../public/data/data.json';
-
 // Composants
 import Slideshow from '../../components/Slideshow/Slideshow';
 import Rating from '../../components/Rating/Rating';
 import Collapse from '../../components/collapse/Collapse';
 import Tag from '../../components/Tag/Tag';
-
-// Style
-import '../Property/property.scss';
+import './property.scss';// Style
 
 const Property = () => {
   const { id } = useParams();

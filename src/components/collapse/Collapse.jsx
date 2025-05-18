@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect } from "react";
-import "../collapse/collapse.scss";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { useState, useRef, useEffect } from 'react';
+import '../collapse/collapse.scss';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 const Collapse = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,9 +14,9 @@ const Collapse = ({ title, children }) => {
   }, [isOpen, children]);
 
   return (
-    <div className={`collapse ${isOpen ? "open" : ""}`}>
-      <button 
-        className="collapse-header" 
+    <div className={`collapse ${isOpen ? 'open' : ''}`}>
+      <button
+        className="collapse-header"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
       >
@@ -25,18 +25,16 @@ const Collapse = ({ title, children }) => {
           {isOpen ? <FaChevronUp /> : <FaChevronDown />}
         </span>
       </button>
-      
-      <div 
+
+      <div
         className="collapse-content"
         ref={contentRef}
         style={{
           height: `${contentHeight}px`,
-          overflow: 'hidden'
+          overflow: 'hidden',
         }}
       >
-        <div className="content-inner">
-          {children}
-        </div>
+        <div className="content-inner">{children}</div>
       </div>
     </div>
   );

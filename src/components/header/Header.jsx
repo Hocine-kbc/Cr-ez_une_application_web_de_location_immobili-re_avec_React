@@ -8,9 +8,22 @@ const Header = () => {
       <NavLink to="/">
         <img src="/images/logo_kasa.svg" alt="Kasa" className="header-logo" />
       </NavLink>
+
       <nav className="header-nav">
-        <NavLink to="/" end activeClassName="active">Accueil</NavLink>
-        <NavLink to="/a-propos" activeClassName="active">À Propos</NavLink>
+
+        <NavLink 
+          to="/" 
+          className={({ isActive }) => isActive ? 'active' : ''}
+        >
+          Accueil
+        </NavLink>
+        <NavLink 
+          to="/a-propos"  
+          className={({ isActive }) => isActive ? 'active' : ''}
+        >
+          A Propos
+        </NavLink>
+        
       </nav>
     </header>
   );
