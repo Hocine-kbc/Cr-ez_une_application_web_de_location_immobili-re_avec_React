@@ -19,8 +19,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: inherit;
+    opacity: 0.3;
+    background: #000;
+    mix-blend-mode: darken;
   }
 
   &__title {

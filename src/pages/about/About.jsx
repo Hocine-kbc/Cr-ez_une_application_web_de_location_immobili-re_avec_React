@@ -1,18 +1,16 @@
 import React from 'react';
 import Collapse from '../../components/collapse/Collapse';
 import '../about/about.scss';
+import Banner from '../../components/banner/Banner';
 
 const About = () => {
   return (
     <main className="about-page">
       {/* Bannière avec image */}
-      <div className="about-banner">
-        <img
-          src="/images/about-image.png"
-          alt="Bannière À Propos"
-          className="about-banner-image"
-        />
-      </div>
+      <Banner
+        image="/images/about-image.png"
+        title="" // Laissez vide si vous ne voulez pas de titre
+      />
 
       {/* Sections collapsibles */}
       <section className="about-collapses">

@@ -1,0 +1,46 @@
+@use './mixin' as *;
+
+// Responsive font sizes
+@include mobile {
+  h1 {
+    font-size: 24px !important;
+  }
+
+  h2 {
+    font-size: 20px !important;
+  }
+
+  p,
+  li,
+  a {
+    font-size: 14px !important;
+  }
+}
+
+// Visibility helpers
+.desktop-only {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.mobile-only {
+  display: none;
+
+  @include mobile {
+    display: block;
+  }
+}
+
+// Accessibility
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
