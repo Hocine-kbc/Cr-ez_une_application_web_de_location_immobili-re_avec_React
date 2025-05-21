@@ -1,6 +1,5 @@
 @use './mixin' as *;
 
-// Responsive font sizes
 @include mobile {
   h1 {
     font-size: 96px !important;
@@ -18,7 +17,6 @@
   }
 }
 
-// Visibility helpers
 .desktop-only {
   @include mobile {
     display: none !important;
@@ -32,5 +30,3 @@
     display: block;
   }
 }
-
-// Accessibility
