@@ -2,8 +2,18 @@
 
 @include mobile {
   h1 {
+    font-size: 24px !important;
+  }
+
+  .error-title {
     font-size: 96px !important;
-    margin-top: -70px;
+  }
+  .oups {
+    font-size: 18px !important;
+  }
+
+  .retour {
+    font-size: 14px !important;
   }
 
   h2 {

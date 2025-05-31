@@ -1,45 +1,55 @@
 import React, { useState, useEffect } from 'react';
-import '../Slideshow/slideshow.scss';
+import './slideshow.scss';
 
 const Slideshow = ({ pictures }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState(null);
   const [direction, setDirection] = useState('right');
 
-  const goToNext = () => {
+  ////////////////////////////////// Fonction pour changer de slide /////////////////////////////////////////
+  const changeSlide = (newIndex, dir) => {
     setPrevIndex(currentIndex);
-    setDirection('right');
-    setCurrentIndex((prev) => (prev + 1) % pictures.length);
+    setCurrentIndex(newIndex);
+    setDirection(dir);
+  };
+  /////////////////////////////////// Aller à l’image suivante ////////////////////////////////////////////////////
+  const goToNext = () => {
+    const nextIndex = (currentIndex + 1) % pictures.length;
+    changeSlide(nextIndex, 'right');
   };
 
+  /////////////////////////////////// Aller à l’image precedente  ////////////////////////////////////////////////
   const goToPrev = () => {
-    setPrevIndex(currentIndex);
-    setDirection('left');
-    setCurrentIndex((prev) => (prev - 1 + pictures.length) % pictures.length);
+    const prev = (currentIndex - 1 + pictures.length) % pictures.length;
+    changeSlide(prev, 'left');
   };
+
+  ////////////////////////Effet pour cacher l’ancienne image après animation //////////////////////////////////////
 
   useEffect(() => {
-    const timer = setTimeout(() => setPrevIndex(null), 500);
+    const timer = setTimeout(() => setPrevIndex(null), 800);
     return () => clearTimeout(timer);
   }, [currentIndex]);
+
+  //////////////////////////////////// Rendu jsx /////////////////////////////////////////////////////////////////
 
   return (
     <div className="slideshow">
       <div className="slideshow-container">
         {prevIndex !== null && (
           <img
-            key={`slide-prev-${prevIndex}-${direction}`}
+            key={`prev-${prevIndex}`}
             src={pictures[prevIndex]}
-            alt={`Slide ${prevIndex + 1}`}
+            alt=""
             className={`slideshow-image ${
               direction === 'right' ? 'slide-out-left' : 'slide-out-right'
             }`}
           />
         )}
         <img
-          key={`slide-current-${currentIndex}-${direction}`}
+          key={`current-${currentIndex}`}
           src={pictures[currentIndex]}
-          alt={`Slide ${currentIndex + 1}`}
+          alt=""
           className={`slideshow-image ${
             direction === 'right' ? 'slide-in-right' : 'slide-in-left'
           }`}
@@ -48,10 +58,15 @@ const Slideshow = ({ pictures }) => {
 
       {pictures.length > 1 && (
         <>
-          <button className="slideshow-button left" onClick={goToPrev}>‹</button>
-          <button className="slideshow-button right" onClick={goToNext}>›</button>
+          <button className="slideshow-button left" onClick={goToPrev}>
+            ‹
+          </button>
+          <button className="slideshow-button right" onClick={goToNext}>
+            ›
+          </button>
           <div className="slideshow-counter">
-            {currentIndex + 1} / {pictures.length}
+            {' '}
+            {currentIndex + 1} / {pictures.length}{' '}
           </div>
         </>
       )}

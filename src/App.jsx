@@ -10,7 +10,6 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Toutes les pages imbriquées utiliseront Layout */}
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/property/:id" element={<Property />} />

@@ -1,11 +1,9 @@
-// property.scss
-
 .property-page {
   width: 100%;
-  //max-width: 1240px;
   margin: 0 auto;
   padding: 0 100px;
   color: #ff6060;
+  font-family: 'Montserrat', sans-serif;
 
   .property-header {
     display: flex;
@@ -23,7 +21,8 @@
       .property-location {
         font-size: 18px;
         margin: 8px 0 16px;
-        color: #000000; // Couleur corrigée
+        color: #000000;
+        text-transform: capitalize;
       }
 
       .tags-container {
@@ -31,6 +30,15 @@
         gap: 10px;
         flex-wrap: wrap;
         margin-top: 20px;
+
+        .tag {
+          font-size: 12px;
+          padding: 4px 12px;
+          border-radius: 10px;
+          background-color: #ff6060;
+          color: white;
+          font-weight: 500;
+        }
       }
     }
 
@@ -95,13 +103,21 @@
     li {
       margin-bottom: 5px;
       &:before {
-        content: "•";
+        content: '•';
         margin-right: 8px;
       }
     }
   }
 
-  // Footer (ajoutez-le dans votre JSX)
+  .back-home-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #ff6060;
+    font-size: 18px;
+    text-decoration: underline;
+  }
+
   .property-footer {
     text-align: center;
     padding: 50px 0;
@@ -112,7 +128,7 @@
   }
 
   @media (max-width: 768px) {
-    padding: 0 20px;
+    padding: 0 16px;
 
     .property-header {
       flex-direction: column;
@@ -120,22 +136,35 @@
 
       .left-column {
         .property-title {
-          font-size: 24px;
+          font-size: 20px !important;
         }
-        
+
         .property-location {
-          font-size: 16px;
+          font-size: 14px;
+        }
+
+        .tags-container {
+          margin-top: 8px;
         }
       }
 
       .right-column {
-        flex-direction: row-reverse;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         margin-top: 15px;
 
         .host-info {
           order: 2;
+
+          .host-name {
+            font-size: 14px;
+          }
+
+          .host-picture {
+            width: 48px;
+            height: 48px;
+          }
         }
 
         .rating-container {
